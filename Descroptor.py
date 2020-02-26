@@ -43,8 +43,9 @@ def calculation(mol_list, smiles_list, index_list, descriptor_type):
     return df
 
 
-mol_list, smiles_list, index_list = load_sdf(params['sdf_path'])
-df_dsc = calculation(mol_list, smiles_list, index_list,
-                     params['descriptor_type'])
-df_dsc.to_csv(params['csv_path'])
-print('Columns size: ', len(df_dsc.columns))
+if __name__ == '__main__':
+    mol_list, smiles_list, index_list = load_sdf(params['sdf_path'])
+    df_dsc = calculation(mol_list, smiles_list, index_list,
+                         params['descriptor_type'])
+    df_dsc.to_csv(params['csv_path'])
+    print('Columns size: ', len(df_dsc.columns))
