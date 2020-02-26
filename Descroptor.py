@@ -1,6 +1,13 @@
 from rdkit import Chem
 from mordred import descriptors, Calculator
-import argparse
+
+params = {
+    'sdf_path': '../sdf/blined_humancl_95_test_1482.sdf',
+    'csv_path': '../test.csv',
+    # if '3D': calcurate 2D and 3D descriptors,
+    # elif '2D': calcurate 2D descriptors
+    'descriptor_type': '2D'
+}
 
 
 def load_sdf(sdf_path):
@@ -18,8 +25,11 @@ def load_sdf(sdf_path):
     return mol_list, smiles_list, index_list,
 
 
-def calculation(mol_list, smiles_list, index_list):
-    calc = Calculator(descriptors)
+def calculation(mol_list, smiles_list, index_list, descriptor_type):
+    if descriptor_type == '2D':
+        calc = Calculator(descriptors, ignore_3D=True)
+    elif descriptor_type == '3D':
+        calc = Calculator(descriptors)
     df = calc.pandas(mol_list)
     df = df.astype(str)
     masks = df.apply(
@@ -33,13 +43,8 @@ def calculation(mol_list, smiles_list, index_list):
     return df
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('sdf_path', help='path of sdf')
-    parser.add_argument('csv_path', help='path of destination csv')
-    args = parser.parse_args()
-
-    mol_list, smiles_list, index_list = load_sdf(args.sdf_path)
-    df_dsc = calculation(mol_list, smiles_list, index_list)
-    df_dsc.to_csv(args.csv_path)
-    print('Columns size: ', len(df_dsc.columns))
+mol_list, smiles_list, index_list = load_sdf(params['sdf_path'])
+df_dsc = calculation(mol_list, smiles_list, index_list,
+                     params['descriptor_type'])
+df_dsc.to_csv(params['csv_path'])
+print('Columns size: ', len(df_dsc.columns))
