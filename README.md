@@ -30,10 +30,14 @@ conda install -c mordred-descriptor mordred
  <br>
 
 #### 使用方法
-① Descriptor.pyのparamsを設定する<br>
-* sdf_path: 参照するsdfファイルのパス ( str )
-* csv_path: 保存するcsvファイルのパス ( str )
-* 算出する記述子のタイプ ( str '2D' or '3D' )
+コマンドラインからDescriptor_ver1.0.1.pyを実行する.<br>
+引数は以下のように設定する
+* sdf_path: 参照するsdfファイルのパス
+* csv_path: 保存するcsvファイルのパス
+* 算出する記述子のタイプ ( 2D or 3D )<br>
 ※3Dに設定した場合は2D記述子と３D記述子の両方が算出される.<br>
 
-② PythonファイルDescriptor.pyを実行する.<br>
+#### 実行例
+```
+$ Descriptor_ver1.0.1.py test.sdf test.csv 3D
+```

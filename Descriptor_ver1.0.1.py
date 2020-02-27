@@ -1,5 +1,6 @@
 from rdkit import Chem
 from mordred import descriptors, Calculator
+import argparse
 
 params = {
     'sdf_path': './sdf/blined_humancl_95_test_1482.sdf',
@@ -44,8 +45,15 @@ def calculation(mol_list, smiles_list, index_list, descriptor_type):
 
 
 if __name__ == '__main__':
-    mol_list, smiles_list, index_list = load_sdf(params['sdf_path'])
+    parser = argparse.ArgumentParser()
+    parser.add_argument('sdf_path')
+    parser.add_argument('csv_path')
+    parser.add_argument('descriptor_type', type=str,
+                        help='descriptor_type str 2D or 3D')
+    args = parser.parse_args()
+
+    mol_list, smiles_list, index_list = load_sdf(args.sdf_path)
     df_dsc = calculation(mol_list, smiles_list, index_list,
-                         params['descriptor_type'])
-    df_dsc.to_csv(params['csv_path'])
+                         args.descriptor_type)
+    df_dsc.to_csv(args.csv_path)
     print('Columns size: ', len(df_dsc.columns))
