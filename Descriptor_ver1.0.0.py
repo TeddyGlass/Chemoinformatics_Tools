@@ -2,8 +2,8 @@ from rdkit import Chem
 from mordred import descriptors, Calculator
 
 params = {
-    'sdf_path': '../sdf/blined_humancl_95_test_1482.sdf',
-    'csv_path': '../test.csv',
+    'sdf_path': './sdf/blined_humancl_95_test_1482.sdf',
+    'csv_path': './csv/test.csv',
     # if '3D': calcurate 2D and 3D descriptors,
     # elif '2D': calcurate 2D descriptors
     'descriptor_type': '2D'
