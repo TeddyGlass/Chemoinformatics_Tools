@@ -20,7 +20,8 @@ weightの値に基づき化学構造に色を割り当てます.
 赤は正, 青は負の寄与を表しています. 
 しかし, feature importanceを用いた場合は, weightが非負であるため視認性が下がる欠点があります.
 <div align="center">
-  <img width="537" alt="image" src="https://user-images.githubusercontent.com/39366279/108008230-3e94f000-7043-11eb-8c15-9b849a36a300.png">
+  <img width="537" alt="chem" src="https://user-images.githubusercontent.com/39366279/108010711-d77a3a00-7048-11eb-85c5-a9bdb294d94c.png">
+  <img width="537" alt="table" src="https://user-images.githubusercontent.com/39366279/108010752-f082eb00-7048-11eb-9e1c-cf0b779b9531.png">
 </div>
 <br>
 
