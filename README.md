@@ -11,7 +11,7 @@
 <a id="anchor1"></a>
 # 1 Visualization of Prediction Basis from ML Model
 ### ディレクトリ名
-```visualize```  
+```visualiz```  
 ### 概要
 フィンガープリントを特徴量とした機械学習QSARモデルの予測根拠を可視化するプログラム(ノートブック形式).  
 決定木系のアルゴリズムから得られる feature importance に基づき原子の重要度を示したweightを取得します.  
