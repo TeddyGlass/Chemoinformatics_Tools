@@ -10,19 +10,28 @@
 
 <a id="anchor1"></a>
 # 1 Visualization of Prediction Basis from ML Model
+
+
 ### ディレクトリ名
 ```visualization```  
+
+
 ### 概要
+
+<div align="center">
+  <img width="700" alt="title" src="https://user-images.githubusercontent.com/39366279/108031694-a152af80-7074-11eb-849c-f30ecaa5fb47.png">
+</div>
+
 フィンガープリントを特徴量とした機械学習QSARモデルの予測根拠を可視化するプログラム(ノートブック形式).  
 決定木系のアルゴリズムから得られる feature importance に基づき原子の重要度を示したweightを取得します.  
 化合物の所有する部分構造に機械学習モデルから得られたfeature importanceを割り当て, それを部分構造上に存在する原子数で平均化することでweightが算出されます.  
 weightの値に基づき化学構造に色を割り当てます.  
 赤は正, 青は負の寄与を表しています. 
 しかし, feature importanceを用いた場合は, weightが非負であるため視認性が下がる欠点があります.
+
 <div align="center">
-  <img width="537" alt="chem" src="https://user-images.githubusercontent.com/39366279/108031339-0a85f300-7074-11eb-8a52-62ff3facebcd.png">
-  <img width="537" alt="chem" src="https://user-images.githubusercontent.com/39366279/108010711-d77a3a00-7048-11eb-85c5-a9bdb294d94c.png">
-  <img width="537" alt="table" src="https://user-images.githubusercontent.com/39366279/108010752-f082eb00-7048-11eb-9e1c-cf0b779b9531.png">
+  <img width="700" alt="chem" src="https://user-images.githubusercontent.com/39366279/108010711-d77a3a00-7048-11eb-85c5-a9bdb294d94c.png">
+  <img width="700" alt="table" src="https://user-images.githubusercontent.com/39366279/108010752-f082eb00-7048-11eb-9e1c-cf0b779b9531.png">
 </div>
 <br>
 
