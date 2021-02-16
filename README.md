@@ -32,7 +32,7 @@ weightの値に基づき化学構造に色を割り当てます.
 
 
 <a id="anchor2"></a>
-# 2 Mordred記述子テーブルの自動生成プログラム
+# 2 Mordred Calculator
 
 ### ディレクトリ名
 ```descriptors``` 
