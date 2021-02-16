@@ -1,7 +1,13 @@
 # Chemoinformatics_Tools
-ケモインフォマティクス関連のツールを集約させたリポジトリ
+ケモインフォマティクス関連のツールを集約させたリポジトリ  
+<br>
+1. [機械学習QSARモデルの予測根拠可視化](#anchor1)
+２. [Mordred記述子算出](#anchor2)
+<br>
 <br>
 
+
+<a id="anchor1"></a>
 # 1 Visualization of Prediction Basis from ML Model
 ### ディレクトリ名
 ```visualize```  
@@ -22,6 +28,8 @@ weightの値に基づき化学構造に色を割り当てます.
 <br>
 <br>
 
+
+<a id="anchor2"></a>
 # 2 Mordred記述子テーブルの自動生成プログラム
 
 ### ディレクトリ名
