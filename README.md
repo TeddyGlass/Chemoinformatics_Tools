@@ -86,5 +86,5 @@ conda install -c mordred-descriptor mordred
 
 #### 実行例
 ```
-$ Descriptor_ver1.0.1.py test.sdf test.csv 3D
+$ python Descriptor_ver1.0.1.py test.sdf test.csv 3D
 ```
