@@ -9,9 +9,9 @@
 
 <a id="anchor1"></a>
 # 1 Visualization of Prediction Basis from ML Model  
-本ソースコードは機械学習法を用いたQSAR(Quantitative Structure-Activity Relationships)において困難とされたモデルの解釈性に対処するためのプログラムである.
-フィンガープリントを特徴量とした機械学習QSARモデルの予測根拠を可視化するプログラム(ノートブック形式).  
-決定木系のアルゴリズムから得られる feature importance に基づき原子の重要度を示したweightを取得します.  
+本ソースコードは機械学習法を用いたQSAR(Quantitative Structure-Activity Relationships)モデルの解釈性を向上させることを目的としたプログラムです. これにより, 生理活性・物性・毒性予測に寄与する部分構造をその寄与率に応じて化学構造上にマッピングすることが可能となります. 原理上, 特徴量としてFingerprintを用いており, かつ予測に対するFingerprintの重要度を数値として取得可能な機械学習アルゴリズムであれば本ソースコードは適用可能です. 従って,現在主流とされる機械学習アルゴリズムであるRandom Forest, LightGBM, XGBoost, Neural Network(Permutation Importanceにより特徴量の重要度を取得可能)などにも適応することが可能です. ここでは実装を簡易化するために, CART（Classification and Regression Tree）アルゴリズムに代表されるRandam Forestのみを導入します.  
+本実装では機械学習モデルから得られる特徴量の重要度から算出したWeightに基づき, 化学構造上に色を割り当てます. Weightは以下の単純な計算により求めることが可能です.  
+
 化合物の所有する部分構造に機械学習モデルから得られたfeature importanceを割り当て, それを部分構造上に存在する原子数で平均化することでweightが算出されます.  
 weightの値に基づき化学構造に色を割り当てます.  
 赤は正, 青は負の寄与を表しています. 
