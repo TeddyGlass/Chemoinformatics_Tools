@@ -14,6 +14,7 @@
 本実装では機械学習モデルから得られる特徴量の重要度から算出したWeightに基づき, 化学構造上に色を割り当てます. Weightは以下の単純な計算により求めることが可能です.  
  - Fingerprintの各ビットに関するFeature importanceを取得  
  - 各ビットに対応する部分構造上の原子数を用いてFeature importanceを平均化  
+ <br>
  以上の処理によりWeightが算出され,Weightの値に基づき化学構造に色が割り当てられます.
 
 <div align="center">
