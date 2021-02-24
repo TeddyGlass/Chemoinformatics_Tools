@@ -1,5 +1,4 @@
 # Chemoinformatics_Tools
-ケモインフォマティクス関連のツールを集約させたリポジトリ  
 
 1. [機械学習QSARモデルの予測根拠可視化](#anchor1)
 2. [Mordred記述子算出](#anchor2)
@@ -9,19 +8,8 @@
 
 
 <a id="anchor1"></a>
-# 1 Visualization of Prediction Basis from ML Model
-
-
-### ディレクトリ名
-```visualization```  
-
-
-### 概要
-
-<div align="center">
-  <img width="700" alt="title" src="https://user-images.githubusercontent.com/39366279/108031694-a152af80-7074-11eb-849c-f30ecaa5fb47.png">
-</div>
-
+# 1 Visualization of Prediction Basis from ML Model  
+本ソースコードは機械学習法を用いたQSAR(Quantitative Structure-Activity Relationships)において困難とされたモデルの解釈性に対処するためのプログラムである.
 フィンガープリントを特徴量とした機械学習QSARモデルの予測根拠を可視化するプログラム(ノートブック形式).  
 決定木系のアルゴリズムから得られる feature importance に基づき原子の重要度を示したweightを取得します.  
 化合物の所有する部分構造に機械学習モデルから得られたfeature importanceを割り当て, それを部分構造上に存在する原子数で平均化することでweightが算出されます.  
