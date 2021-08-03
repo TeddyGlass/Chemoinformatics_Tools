@@ -16,7 +16,6 @@ In this implementation, colors are assigned to chemical structures based on the 
  - Gain feature importances respect to each bit of fingerprint
  - Averaging feature importance using the numbet og atoms that are belong to a substructure corresponding to bit.
  - Averaged feature importance was assigned as the a weight that represent contribution of its substructure.
- <br>
  The above process calculates the weight and assigns a color to the chemical structure based on the weight value.
 
 <div align="center">
