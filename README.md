@@ -15,8 +15,9 @@ Applying this code, you can map colors onto the chemical structure according to 
 In this implementation, colors are assigned to chemical structures based on the weight calculated from the importance of features obtained from the machine learning model. Weight can be obtained by the following simple calculation.　　
  - Gain feature importances respect to each bit of fingerprint
  - Averaging feature importance using the numbet og atoms that are belong to a substructure corresponding to bit.
- - Averaged feature importance was assigned as the a weight that represent contribution of its substructure.
- The above process calculates the weight and assigns a color to the chemical structure based on the weight value.
+ - Averaged feature importance was assigned as the a weight that represent contribution of its substructure.  
+ 
+The above process calculates the weight and assigns a color to the chemical structure based on the weight value.
 
 <div align="center">
   <img width="700" alt="chem" src="https://user-images.githubusercontent.com/39366279/108010711-d77a3a00-7048-11eb-85c5-a9bdb294d94c.png">
