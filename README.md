@@ -12,11 +12,12 @@
 The aim of this code is to improve interpretability of QSAR(Quantitative Structure-Activity Relationships) model which uses machine learning based on fingert print.
 Applying this code, you can map colors onto the chemical structure according to contribution to the prediction of substructures, it enables us to interptet substructures contributing to the prediction of pharmacological, physicochemical, and toxicological activities. Here we show a simple implementation using RandomForest which is a typical CART （Classification and Regression Tree） algorithm. Note that this interpretation algrithm can be applied to other machne learning algorithms, e.g. ,LightGBM, XGBoost and Neural Network (which is applied Permutation Importance to get feature importance), is theoretically possible. Therefore, this interpretation algrithm can be used for general purpose.  
 <br>
-In this implementation, colors are assigned to chemical structures based on the weight calculated from the importance of features obtained from the machine learning model.Weight can be obtained by the following simple calculation.
- - Fingerprintの各ビットに関するFeature importanceを取得  
- - 各ビットに対応する部分構造上の原子数を用いてFeature importanceを平均化  
+In this implementation, colors are assigned to chemical structures based on the weight calculated from the importance of features obtained from the machine learning model. Weight can be obtained by the following simple calculation.　　
+ - Gain feature importances respect to each bit of fingerprint
+ - Averaging feature importance using the numbet og atoms that are belong to a substructure corresponding to bit.
+ - Averaged feature importance was assigned as the a weight that represent contribution of its substructure.
  <br>
- 以上の処理によりWeightが算出され,Weightの値に基づき化学構造に色が割り当てられます.
+ The above process calculates the weight and assigns a color to the chemical structure based on the weight value.
 
 <div align="center">
   <img width="700" alt="chem" src="https://user-images.githubusercontent.com/39366279/108010711-d77a3a00-7048-11eb-85c5-a9bdb294d94c.png">
@@ -24,8 +25,8 @@ In this implementation, colors are assigned to chemical structures based on the 
 </div>
 <br>
 
-### サンプルデータ
-[Hansen et al.](https://pubs.acs.org/doi/abs/10.1021/ci900161g) が提供する化合物の変異原性データベースを用いました.
+### Sample data
+Mutagenicity data set which [Hansen et al.](https://pubs.acs.org/doi/abs/10.1021/ci900161g) provided in 2009 was used.
 <br>
 <br>
 
