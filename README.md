@@ -8,10 +8,11 @@
 
 
 <a id="anchor1"></a>
-# 1 Visualization of Prediction basis from ML Model  
-本ソースコードは機械学習法を用いたQSAR(Quantitative Structure-Activity Relationships)モデルの解釈性を向上させることを目的としたプログラムです.  
-これにより, 生理活性・物性・毒性予測に寄与する部分構造をその寄与率に応じて化学構造上にマッピングすることが可能となります. ここでは実装を簡易化するために, CART（Classification and Regression Tree）アルゴリズムに代表されるRandam Forestを用いた実装例のみを導入しますが, 原理上, 特徴量としてFingerprintを用いており, かつ予測に対するFingerprintの重要度を数値として取得可能な機械学習アルゴリズムであれば本ソースコードは適用可能です. 従って,現在主流とされる機械学習アルゴリズムであるRandom Forest, LightGBM, XGBoost, Neural Network(Permutation Importanceにより特徴量の重要度を取得可能)などにも適応することが可能です.  
-本実装では機械学習モデルから得られる特徴量の重要度から算出したWeightに基づき, 化学構造上に色を割り当てます. Weightは以下の単純な計算により求めることが可能です.  
+# 1 Visualization of prediction basis from finger print based machine learning model  
+The aim of this code is to improve interpretability of QSAR(Quantitative Structure-Activity Relationships) model which uses machine learning based on fingert print.
+Applying this code, you can map colors onto the chemical structure according to contribution for the prediction, it enable us to interptet partial structures contributing to the prediction of pharmacological, physicochemical, and toxicological activities.  
+Here we show a simple implementation using RandomForest which is a typical CART （Classification and Regression Tree） algorithm. Note that this interpretation algrithm can be applied to other machne learning algorithms, e.g. ,LightGBM, XGBoost and Neural Network (which is applied Permutation Importance to get feature importance), is theoretically possible. Therefore, this interpretation algrithm can be used for general purpose. 
+In this implementation, colors are assigned to chemical structures based on the weight calculated from the importance of features obtained from the machine learning model.Weight can be obtained by the following simple calculation.
  - Fingerprintの各ビットに関するFeature importanceを取得  
  - 各ビットに対応する部分構造上の原子数を用いてFeature importanceを平均化  
  <br>
